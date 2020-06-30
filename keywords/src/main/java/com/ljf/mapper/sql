@@ -1,0 +1,19 @@
+	SELECT
+-- 		spu.id as spu_id , spu.*,sku.id as sku_id ,sku.*,tm.id
+-- 		as tm_id ,tm.*
+-- 		FROM
+-- 		t_mall_product spu,
+-- 		t_mall_sku sku,
+-- 		t_mall_trade_mark tm
+-- 		WHERE
+-- 		spu.Id = sku.shp_id
+-- 		and spu.pp_id = tm.Id
+-- 		and spu.flbh2 =
+-- 		#{flbh2}
+
+<!--            <result column="shp_mch" property="shp_mch" jdbcType="VARCHAR"/>-->
+<!--            <result column="flbh1" property="flbh1" jdbcType="INTEGER"/>-->
+<!--            <result column="flbh2" property="flbh2" jdbcType="INTEGER"/>-->
+<!--            <result column="pp_id" property="pp_id" jdbcType="INTEGER"/>-->
+<!--            <result column="chjshj" property="chjshj" jdbcType="VARCHAR"/>-->
+<!--            <result column="shp_msh" property="shp_msh" jdbcType="VARCHAR"/>-->

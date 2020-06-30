@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljf.mapper.ClassMapper">
+	<resultMap id="account" type="com.ljf.bean.T_MALL_USER_ACCOUNT">
+		<id column="id" property="id" />
+		<result column="yh_mch" property="yh_mch" jdbcType="VARCHAR"/>
+		<result column="yh_nch" property="yh_nch" jdbcType="VARCHAR"/>
+		<result column="yh_mm" property="yh_mm" jdbcType="VARCHAR"/>
+		<result column="yh_xm" property="yh_xm" jdbcType="VARCHAR"></result>
+		<result column="yh_shjh" property="yh_shjh" jdbcType="VARCHAR"></result>
+		<result column="yh_yx" property="yh_yx" jdbcType="VARCHAR"></result>
+		<result column="yh_tx" property="yh_tx" jdbcType="VARCHAR"></result>
+        <result column="yh_jd" property="yh_jd" jdbcType="VARCHAR"></result>
+
+	</resultMap>
+	<select id="select_list_by_flbh2" parameterType="int"
+		resultMap="select_list_by_flbh2_map">
+		SELECT
+		sku.id as sku_id, spu.*,sku.*
+		FROM
+		t_mall_product spu,
+		t_mall_sku sku,
+		t_mall_trade_mark tm
+		WHERE
+		spu.Id = sku.shp_id
+		and spu.pp_id = tm.Id
+		and spu.flbh2 =
+		#{flbh2}
+	</select>
+	<select id="account" resultMap="account">
+		SELECT * from t_mall_user_account where yh_jb = 1
+	</select>
+
+	<resultMap type="com.ljf.bean.KEYWORDFS_T_MALL_SKU" id="select_list_by_flbh2_map"
+               autoMapping="true">
+		<id column="sku_id" property="id" />
+<!--        <result column="sku_mch" property="sku_mch" jdbcType="VARCHAR"/>-->
+<!--		<association property="spu" javaType="com.atguigu.bean.T_MALL_PRODUCT"-->
+<!--			autoMapping="true">-->
+<!--			<id column="spu_id" property="id" />-->
+
+<!--		</association>-->
+<!--		<association property="tm" javaType="com.atguigu.bean.T_MALL_TRADE_MARK"-->
+<!--			autoMapping="true">-->
+<!--			<id column="tm_id" property="id" />-->
+<!--		</association>-->
+	</resultMap>
+</mapper>

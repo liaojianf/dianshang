@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="keywords:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mall_1018_keywords_teacher</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mall_1018_keywords_teacher.war">
+      <element id="artifact" artifact-name="keywords:war exploded" />
+    </root>
+  </artifact>
+</component>
