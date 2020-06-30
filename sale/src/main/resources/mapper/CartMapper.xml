@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.CartMapper">
+	<resultMap id="shopCar" type="com.atguigu.bean.T_MALL_SHOPPINGCAR">
+		<id column="id" property="id" />
+		<result column="sku_mch" property="sku_mch" jdbcType="VARCHAR"/>
+		<result column="sku_jg" property="sku_jg" jdbcType="INTEGER"/>
+		<result column="tjshl" property="tjshl" jdbcType="INTEGER"/>
+		<result column="hj" property="hj" jdbcType="INTEGER"></result>
+		<result column="yh_id" property="yh_id" jdbcType="INTEGER"></result>
+		<result column="shp_id" property="shp_id" jdbcType="INTEGER"></result>
+		<result column="sku_id" property="sku_id" jdbcType="INTEGER"></result>
+		<result column="shp_tp" property="shp_tp" jdbcType="VARCHAR"/>
+		<result column="shfxz" property="shfxz" jdbcType="VARCHAR"/>
+		<result column="kcdz" property="kcdz" jdbcType="VARCHAR"/>
+	</resultMap>
+	<resultMap id="account" type="com.atguigu.bean.T_MALL_USER_ACCOUNT">
+		<id column="id" property="id" />
+		<result column="yh_mch" property="yh_mch" jdbcType="VARCHAR"/>
+		<result column="yh_nch" property="yh_nch" jdbcType="VARCHAR"/>
+		<result column="yh_mm" property="yh_mm" jdbcType="VARCHAR"/>
+		<result column="yh_xm" property="yh_xm" jdbcType="VARCHAR"></result>
+		<result column="yh_shjh" property="yh_shjh" jdbcType="VARCHAR"></result>
+		<result column="yh_yx" property="yh_yx" jdbcType="VARCHAR"></result>
+		<result column="yh_tx" property="yh_tx" jdbcType="VARCHAR"></result>
+		<result column="yh_jd" property="yh_jd" jdbcType="VARCHAR"/>
+
+	</resultMap>
+
+	<select id="select_cart_exists" parameterType="com.atguigu.bean.T_MALL_SHOPPINGCAR"
+		resultType="int">
+		select count(1) from t_mall_shoppingCar where sku_id =
+		#{sku_id} and yh_id = #{yh_id}
+	</select>
+<select id="selet_all" resultMap="shopCar" parameterType="int">
+	select * from t_mall_shoppingCar where yh_id = #{yh_id}
+</select>
+	<select id="select_list_cart_by_user" parameterType="com.atguigu.bean.T_MALL_USER_ACCOUNT"
+		resultType="com.atguigu.bean.T_MALL_SHOPPINGCAR">
+		select * from t_mall_shoppingCar where yh_id = #{id}
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyColumn="id"
+		keyProperty="id" parameterType="com.atguigu.bean.T_MALL_SHOPPINGCAR">
+		insert into
+		t_mall_shoppingCar(
+		sku_mch,
+		sku_jg,
+		tjshl,
+		hj,
+		yh_id,
+		shp_id,
+		sku_id,
+		shp_tp,
+		shfxz,
+		kcdz
+		)
+		values
+		(
+		#{sku_mch},
+		#{sku_jg},
+		#{tjshl},
+		#{hj},
+		#{yh_id},
+		#{shp_id},
+		#{sku_id},
+		#{shp_tp},
+		'1',
+		#{kcdz}
+		)
+	</insert>
+	<select id="account" resultType="com.atguigu.bean.T_MALL_USER_ACCOUNT">
+		SELECT * from t_mall_user_account where yh_jb = 1
+	</select>
+	<update id="update" parameterType="com.atguigu.bean.T_MALL_SHOPPINGCAR">
+		update t_mall_shoppingCar
+		<set>
+			<if test="tjshl!=0">
+				tjshl = #{tjshl},
+			</if>
+			<if test="hj!=0">
+				hj = #{hj},
+			</if>
+			<if test="shfxz!=null and shfxz!=''">
+				shfxz = #{shfxz},
+			</if>
+		</set>
+		where sku_id = #{sku_id}
+		<if test="yh_id!=0">
+			and yh_id = #{yh_id}
+		</if>
+	</update>
+
+</mapper>

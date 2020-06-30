@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.CVMapper">
+
+    <resultMap id="cvmap" type="com.atguigu.bean.OBJECT_T_MALL_COLVER" >
+<collection property="colorList" ofType="com.atguigu.bean.T_MALL_PRODUCT_COLOR">
+    <id column="col_id" property="id"></id>
+    <result column="col_shpid" property="shp_id" jdbcType="VARCHAR"></result>
+    <result column="shp_ys" property="shp_ys" jdbcType="VARCHAR"></result>
+</collection>
+        <collection property="versionList" ofType="com.atguigu.bean.T_MALL_PRODUCT_VERSION">
+            <id column="ver_id" property="id"></id>
+            <result column="ver_shpid" property="shp_id" jdbcType="VARCHAR"></result>
+            <result column="shp_bb" property="shp_bb" jdbcType="VARCHAR"></result>
+        </collection>
+    </resultMap>
+
+
+    <select id="select_colver_by_shp_id"  resultMap="cvmap" parameterType="INTEGER">
+SELECT
+    col.id col_id,
+col.shp_id col_shpid,
+	col.shp_ys,
+	ver.id ver_id,
+ver.shp_id ver_shpid,
+	ver.shp_bb
+FROM
+	t_mall_product_color col,
+	t_mall_product_version ver
+WHERE
+	col.shp_id = ver.shp_id
+AND col.shp_id = #{shp_id}
+    </select>
+
+</mapper>

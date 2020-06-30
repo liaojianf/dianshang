@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.AttrMapper">
+	<resultMap type="com.atguigu.bean.OBJECT_T_MALL_ATTR" id="MyMall" autoMapping="true">
+		<id column="aid" property="id"/>
+		<result column="shxm_mch" property="shxm_mch" jdbcType="VARCHAR"/>
+		<!--
+            collection定义关联集合类型的属性的封装规则
+            ofType:指定集合里面元素的类型
+        -->
+		<collection property="list_value" ofType="com.atguigu.bean.T_MALL_VALUE" autoMapping="true">
+			<!-- 定义这个集合中元素的封装规则 -->
+			<id column="vid" property="id"/>
+			<result column="shxzh" property="shxzh" jdbcType="VARCHAR"/>
+			<result column="shxzh_mch" property="shxzh_mch" jdbcType="VARCHAR"/>
+		</collection>
+	</resultMap>
+	<select id="select_attr_list" resultMap="MyMall" parameterType="int">
+		select a.Id aid,a.*,v.Id vid,v.*
+from t_mall_attr a
+, t_mall_value v
+where  a.Id=v.shxm_id and flbh2 = #{flbh2}
+	</select>
+
+	<insert id="insert_attr" useGeneratedKeys="true" keyColumn="id"
+		keyProperty="attr.id">
+		insert into t_mall_attr(
+		shxm_mch,
+		flbh2,
+		chjshj
+		)
+		values
+		(
+		#{attr.shxm_mch},
+		#{flbh2},
+		#{attr.chjshj}
+		)
+	</insert>
+
+	<insert id="insert_values">
+		insert into t_mall_value(
+		shxzh,
+		shxm_id,
+		shxzh_mch,
+		chjshj
+		)
+		values
+		<foreach collection="list_value" item="val" separator=",">
+			(
+			#{val.shxzh},
+			#{attr_id},
+			#{val.shxzh_mch},
+			#{val.chjshj}
+			)
+		</foreach>
+	</insert>
+
+
+</mapper>

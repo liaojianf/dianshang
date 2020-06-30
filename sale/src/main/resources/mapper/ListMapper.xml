@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.ListMapper">
+
+    <resultMap id="select_by_flbh2_map" type="com.atguigu.bean.OBJECT_T_MALL_SKU" >
+        <id column="sku_id" property="id"></id>
+        <result column="kc" property="kc" jdbcType="INTEGER"></result>
+        <result column="jg" property="jg" jdbcType="INTEGER"></result>
+        <result column="kcdz" property="kcdz" jdbcType="INTEGER"></result>
+        <result column="sku_mch" property="sku_mch" jdbcType="VARCHAR"></result>
+<association property="spu" javaType="com.atguigu.bean.T_MALL_PRODUCT" autoMapping="true">
+    <id column="spu_id" property="id"></id>
+    <result column="shp_mch" property="shp_mch" jdbcType="VARCHAR"></result>
+    <result column="shp_tp" property="shp_tp" jdbcType="VARCHAR"></result>
+    <result column="shp_msh" property="shp_msh" jdbcType="VARCHAR"></result>
+</association>
+        <association property="tm" javaType="com.atguigu.bean.T_MALL_TRADE_MARK" autoMapping="true">
+            <id column="tm_id" property="id"></id>
+            <result column="ppmch" property="ppmch" jdbcType="VARCHAR"></result>
+        </association>
+    </resultMap>
+    <select id="select_list_by_attr"  resultMap="select_by_flbh2_map" parameterType="Map">
+      SELECT
+	spu.id spu_id,spu.*,sku.id sku_id,sku.*,tm.id tm_id,tm.*
+FROM
+	t_mall_product spu,
+	t_mall_sku sku,
+	t_mall_trade_mark tm
+WHERE
+	spu.Id = sku.shp_id
+AND spu.pp_id = tm.Id
+and spu.flbh2 = #{flbh2}
+${subSql}
+    </select>
+
+    <select id="get_list_by_flbh2"  resultMap="select_by_flbh2_map" parameterType="INTEGER">
+      SELECT
+	spu.id spu_id,spu.*,sku.id sku_id,sku.*,tm.id tm_id,tm.*
+FROM
+	t_mall_product spu,
+	t_mall_sku sku,
+	t_mall_trade_mark tm
+WHERE
+	spu.Id = sku.shp_id
+AND spu.pp_id = tm.Id
+and spu.flbh2 = #{flbh2}
+    </select>
+
+</mapper>
