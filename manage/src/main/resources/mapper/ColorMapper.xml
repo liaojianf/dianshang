@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.ColorMapper">
+
+
+	<insert id="insertColor" parameterType="Map">
+		insert into
+		t_mall_product_color(
+		shp_id,
+		shp_ys
+		)
+		values
+		<foreach collection="colmap" item="col" separator=",">
+			(
+			#{shp_id},
+			#{col.shp_ys}
+			)
+		</foreach>
+	</insert>
+
+
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.VersionMapper">
+
+	<insert id="insertVersion" parameterType="Map">
+		insert into
+		t_mall_product_version(
+		shp_id,
+		shp_bb
+		)
+		values
+		<foreach collection="vermap" item="ver" separator=",">
+			(
+			#{shp_id},
+			#{ver.shp_bb}
+			)
+		</foreach>
+	</insert>
+
+</mapper>

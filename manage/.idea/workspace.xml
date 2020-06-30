@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="manage:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cbe107f6-3672-43a7-b37f-1db2a72ea2b7" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ssm-crud" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RmTCNFzXCGITDkxiD9c1S87jRx" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571629214940" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mall_1018_user_teacher" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ssm-crudS\src\main\webapp\WEB-INF" />
+      <recent name="D:\ssm-crud\src\main\webapp" />
+      <recent name="D:\IdeaProjects\ssm-crud\src\main\webapp" />
+      <recent name="D:\IdeaProjects\ssm-crud\src\main\webapp\WEB-INF" />
+      <recent name="D:\IdeaProjects\ssm-crud\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.atguigu.crud.bean" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\manage\src\main\resources\mapper" />
+      <recent name="E:\manage\src\main\webapp" />
+      <recent name="E:\manage\src\main\java\com\atguigu\controller" />
+      <recent name="E:\ssm-crudS\src\main\webapp\images" />
+      <recent name="E:\ssm-crudS\src\main\webapp" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.99">
+    <configuration name="EmailTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.Test.EmailTest" />
+      <module name="manage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ssm-crud [mybatis-generator:generate,-e]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 7.0.99" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.99" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="manage:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ssm-crud" />
+        <option name="HTTP_PORT" value="8088" />
+        <option name="JNDI_PORT" value="1098" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54482" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="manage:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.EmailTest" />
+      <item itemvalue="Maven.ssm-crud [mybatis-generator:generate,-e]" />
+      <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EmailTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cbe107f6-3672-43a7-b37f-1db2a72ea2b7" name="Default Changelist" comment="" />
+      <created>1570271142267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570271142267</updated>
+      <workItem from="1570271146010" duration="91000" />
+      <workItem from="1570271265422" duration="16000" />
+      <workItem from="1570509178736" duration="12000" />
+      <workItem from="1570775243556" duration="23000" />
+      <workItem from="1570775377069" duration="90000" />
+      <workItem from="1570854939008" duration="4740000" />
+      <workItem from="1570940714142" duration="4561000" />
+      <workItem from="1570951029494" duration="2918000" />
+      <workItem from="1571028476638" duration="3599000" />
+      <workItem from="1571282281104" duration="938000" />
+      <workItem from="1571561415039" duration="968000" />
+      <workItem from="1571623265113" duration="4976000" />
+      <workItem from="1571638407690" duration="3432000" />
+      <workItem from="1571642250147" duration="10263000" />
+      <workItem from="1571724868506" duration="9780000" />
+      <workItem from="1571746145647" duration="14054000" />
+      <workItem from="1571817121148" duration="9959000" />
+      <workItem from="1571833748021" duration="6000" />
+      <workItem from="1571833951306" duration="10341000" />
+      <workItem from="1571885863961" duration="18404000" />
+      <workItem from="1571963826007" duration="8170000" />
+      <workItem from="1571984436736" duration="9523000" />
+      <workItem from="1572479734096" duration="7424000" />
+      <workItem from="1572579780302" duration="775000" />
+      <workItem from="1572660382433" duration="11586000" />
+      <workItem from="1572690577899" duration="600000" />
+      <workItem from="1572692926613" duration="1649000" />
+      <workItem from="1572778928987" duration="2556000" />
+      <workItem from="1572842362192" duration="2583000" />
+      <workItem from="1572877829142" duration="2611000" />
+      <workItem from="1573096338076" duration="1726000" />
+      <workItem from="1573111489668" duration="6923000" />
+      <workItem from="1573135595583" duration="1563000" />
+      <workItem from="1573209809207" duration="7631000" />
+      <workItem from="1573442863118" duration="12642000" />
+      <workItem from="1573488736903" duration="1885000" />
+      <workItem from="1573728145497" duration="1821000" />
+      <workItem from="1573887249399" duration="658000" />
+      <workItem from="1573887938137" duration="2483000" />
+      <workItem from="1573982888075" duration="302000" />
+      <workItem from="1573992273208" duration="180000" />
+      <workItem from="1573993390386" duration="9000" />
+      <workItem from="1573993997296" duration="778000" />
+      <workItem from="1574591611938" duration="4719000" />
+      <workItem from="1574600803321" duration="1882000" />
+      <workItem from="1574656825353" duration="1190000" />
+      <workItem from="1574826013145" duration="607000" />
+      <workItem from="1574838617460" duration="14000" />
+      <workItem from="1574932313085" duration="21000" />
+      <workItem from="1574952004343" duration="622000" />
+      <workItem from="1575131759853" duration="162000" />
+      <workItem from="1575170868108" duration="202000" />
+      <workItem from="1575213185516" duration="612000" />
+      <workItem from="1576647052697" duration="1590000" />
+      <workItem from="1576736493665" duration="1636000" />
+      <workItem from="1577964845058" duration="1987000" />
+      <workItem from="1577967317064" duration="3501000" />
+      <workItem from="1578035662930" duration="702000" />
+      <workItem from="1578139651096" duration="525000" />
+      <workItem from="1578140217870" duration="14110000" />
+      <workItem from="1578202506513" duration="29685000" />
+      <workItem from="1578283968655" duration="26948000" />
+      <workItem from="1578374081631" duration="2115000" />
+      <workItem from="1578378699744" duration="2727000" />
+      <workItem from="1578397405597" duration="929000" />
+      <workItem from="1578468455685" duration="20844000" />
+      <workItem from="1578552130189" duration="9604000" />
+      <workItem from="1578670468642" duration="775000" />
+      <workItem from="1578796895090" duration="2929000" />
+      <workItem from="1578810877103" duration="1194000" />
+      <workItem from="1578913825074" duration="517000" />
+      <workItem from="1578914379041" duration="594000" />
+      <workItem from="1578915762178" duration="1034000" />
+      <workItem from="1578988206930" duration="879000" />
+      <workItem from="1579006616655" duration="769000" />
+      <workItem from="1579094925129" duration="599000" />
+      <workItem from="1579153659549" duration="609000" />
+      <workItem from="1579168884643" duration="46000" />
+      <workItem from="1579188385693" duration="619000" />
+      <workItem from="1579189021276" duration="8073000" />
+      <workItem from="1579198815515" duration="638000" />
+      <workItem from="1579234240162" duration="672000" />
+      <workItem from="1579236288567" duration="591000" />
+      <workItem from="1579328299537" duration="1797000" />
+      <workItem from="1579435846584" duration="3123000" />
+      <workItem from="1579506398692" duration="26000" />
+      <workItem from="1579506453094" duration="6000" />
+      <workItem from="1579680110983" duration="2472000" />
+      <workItem from="1580030414197" duration="282000" />
+      <workItem from="1580032225006" duration="74000" />
+      <workItem from="1580033911581" duration="76000" />
+      <workItem from="1580034095247" duration="65000" />
+      <workItem from="1580037149813" duration="951000" />
+      <workItem from="1580197197558" duration="1627000" />
+      <workItem from="1580385963229" duration="1233000" />
+      <workItem from="1580540410217" duration="1174000" />
+      <workItem from="1580704387633" duration="613000" />
+      <workItem from="1580969574896" duration="1244000" />
+      <workItem from="1580976668500" duration="1193000" />
+      <workItem from="1581493408566" duration="1520000" />
+      <workItem from="1581599820791" duration="2124000" />
+      <workItem from="1581865782121" duration="1158000" />
+      <workItem from="1581925843637" duration="619000" />
+      <workItem from="1582191608255" duration="613000" />
+      <workItem from="1582386795813" duration="107000" />
+      <workItem from="1582974260215" duration="1199000" />
+      <workItem from="1583230245347" duration="2972000" />
+      <workItem from="1584868500075" duration="1891000" />
+      <workItem from="1585241213113" duration="710000" />
+      <workItem from="1585318959454" duration="595000" />
+      <workItem from="1585572809314" duration="350000" />
+      <workItem from="1585664593796" duration="5842000" />
+      <workItem from="1585755310333" duration="1129000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
