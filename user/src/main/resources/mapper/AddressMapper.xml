@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.AddressMapper">
+	<resultMap id="my" type="com.atguigu.bean.T_MALL_ADDRESS" >
+		<id column="Id" property="id"></id>
+		<result column="yh_dz" property="yh_dz" jdbcType="VARCHAR"></result>
+		<result column="dzzt" property="dzzt" jdbcType="VARCHAR"></result>
+		<result column="yh_id" property="yh_id" jdbcType="INTEGER"></result>
+		<result column="shjr" property="shjr" jdbcType="VARCHAR"></result>
+		<result column="lxfsh" property="lxfsh" jdbcType="VARCHAR"></result>
+
+	</resultMap>
+
+	<select id="select_address" resultMap="my" >
+		select * from t_mall_address
+	</select>
+    <select id="select_address_byId" resultMap="my" parameterType="java.lang.Integer">
+		select * from t_mall_address where id = #{id}
+	</select>
+</mapper>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/jdbc 
+       http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+               http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+                http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd
+                http://cxf.apache.org/jaxrs
+        http://cxf.apache.org/schemas/jaxrs.xsd
+       ">
+
+	<context:property-placeholder location="classpath:dbConfig.properties" />
+
+	<context:component-scan base-package="com.atguigu.service"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+
+	<!-- Spring的配置文件，这里主要配置和业务逻辑有关的 -->
+	<!--=================== 数据源，事务控制，xxx ================-->
+	<context:property-placeholder location="classpath:dbConfig.properties" />
+	<bean id="DataSource1" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl1}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	<bean id="DataSource2" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl2}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+
+	<bean id="DataSource" class="com.atguigu.util.MyRoutingDataSource">
+		<property name="targetDataSources">
+			<map key-type="java.lang.String">
+				<entry key="1" value-ref="DataSource1"></entry>
+				<entry key="2" value-ref="DataSource2"></entry>
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="DataSource2"></property>
+	</bean>
+
+
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="DataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<!-- 指定mybatis，mapper文件的位置 -->
+		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.atguigu.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean" />
+	</bean>
+    <bean id="myCallback" class="com.atguigu.util.MyCallback"></bean>
+
+	<bean id="in" class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
+		<constructor-arg>
+			<map key-type="java.lang.String">
+<!--				拦截器  拦截方式-->
+				<entry key="action" value="UsernameToken"></entry>
+<!--				密码加密格式  密码文本格式-->
+				<entry key="passwordType" value="PasswordText"></entry>
+<!--				拦截器回调函数-->
+				<entry key="passwordCallbackRef" value-ref="myCallback"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="beans" class="com.atguigu.bean.Beans">
+		<property name="age" value="22"></property>
+		<property name="name" value="廖剑锋"></property>
+	</bean>
+	<jaxws:endpoint address="/ws"
+		implementorClass="com.atguigu.server.TestServerInf">
+		<jaxws:inInterceptors>
+			<ref bean="in"></ref>
+		</jaxws:inInterceptors>
+		<jaxws:implementor>
+			<bean class="com.atguigu.server.Imp.TestServerImp"></bean>
+		</jaxws:implementor>
+	</jaxws:endpoint>
+
+<!--这些只能在soapui或者sale系统接口调用时使用-->
+	<jaxws:endpoint address="/login"
+		implementorClass="com.atguigu.server.LoginServerInf">
+		<jaxws:implementor>
+			<bean class="com.atguigu.server.Imp.LoginServerImp"></bean>
+		</jaxws:implementor>
+	</jaxws:endpoint>
+    <jaxws:endpoint address="/address"
+                    implementorClass="com.atguigu.server.AddressServerInf">
+        <jaxws:implementor>
+            <bean class="com.atguigu.server.Imp.AddressServerImp"></bean>
+        </jaxws:implementor>
+    </jaxws:endpoint>
+<!--rest风格的可以再浏览器访问-->
+	<jaxrs:server address="/loginRest">
+		<jaxrs:serviceBeans>
+			<bean class="com.atguigu.server.Imp.LoginServerImp"></bean>
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<bean id="txManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="DataSource"></property>
+	</bean>
+
+	<tx:advice transaction-manager="txManager" id="txAdvice">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut expression="execution(* com.atguigu.service.*.*(..))"
+					  id="pointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
+	</aop:config>
+
+
+
+</beans>
